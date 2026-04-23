@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Bezawit — Computational Designer · Product Owner · Data Scientist</title>
-<meta name="description" content="Portfolio of Bezawit: a multidisciplinary technologist bridging computational design, product ownership, and data science. Based in the Netherlands." />
+<title>Bezawit Zerayacob Bekele — Product · ML · Engineering</title>
+<meta name="description" content="Portfolio of Bezawit Zerayacob Bekele: product owner and ML engineer shipping digital products with real users and measurable impact. Based in Amsterdam." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -447,15 +447,18 @@ section {
 }
 
 .proj-viz {
-  grid-column: 2;
   margin-top: 20px;
   height: 80px;
   position: relative;
   overflow: hidden;
   background: var(--accent-bg);
-  padding: 12px 16px;
-  display: flex; align-items: flex-end;
-  gap: 3px;
+  padding: 10px 14px;
+  display: block;
+}
+.proj-viz svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 /* ——— TRAJECTORY ——————————————————————————————— */
@@ -643,7 +646,7 @@ footer {
 <body>
 
 <nav>
-  <div class="mark">B<em>.</em>Z<em>.</em></div>
+  <div class="mark">B<em>.</em>Z<em>.</em>B<em>.</em></div>
   <div class="nav-links">
     <a href="#work">Work</a>
     <a href="#trajectory">Trajectory</a>
@@ -655,13 +658,13 @@ footer {
 <!-- ——— HERO ——————————————————————————————————— -->
 <section class="hero">
   <div class="hero-left">
-    <div class="kicker">Portfolio · March 2026</div>
+    <div class="kicker">Bezawit Zerayacob Bekele · Portfolio 2026</div>
     <h1>
-      I build the <span class="morph" id="morphWord">systems</span><br>
-      behind the <span style="font-style: italic; font-variation-settings: 'SOFT' 80, 'WONK' 1;">spaces</span>.
+      I ship digital <span class="morph" id="morphWord">products</span><br>
+      with real <span style="font-style: italic; font-variation-settings: 'SOFT' 80, 'WONK' 1;">users</span> behind them.
     </h1>
     <p class="lede">
-      Computational designer turned product owner, now finishing a 400-hour data science programme at Le Wagon. I&rsquo;ve shipped parametric configurators used across three European markets, led a team of eight on a legally-mandated sustainability tool, and deployed an ML system predicting hotel cancellations with AUC &gt; 0.86.
+      Product owner, ML engineer, and interface builder based in Amsterdam. Over five years at Packhunt I owned digital products end-to-end &mdash; from a regulated six-figure-budget platform integrated with the Dutch national database to B2B configurators deployed across Spain, France, and Poland. Completed Le Wagon&rsquo;s 400-hour Data Science &amp; AI programme in March 2026, shipping an XGBoost cancellation model to production on Google Cloud Run.
     </p>
     <div class="meta-row">
       <div>
@@ -772,16 +775,16 @@ footer {
 <!-- ——— WORK ————————————————————————————————————— -->
 <section id="work">
   <div class="sec-kicker">02 — Selected work</div>
-  <h2 class="sec-title">Four products. <em>Real users.</em> Real revenue.</h2>
+  <h2 class="sec-title">Five products. <em>Real users.</em> Real revenue.</h2>
 
   <div class="work-grid">
 
     <article class="project" onclick="window.open('https://noshowshield.streamlit.app/', '_blank')">
       <div class="proj-num">/ 01</div>
       <div class="proj-body">
-        <div class="proj-subtitle">Le Wagon Final Project · 2026</div>
+        <div class="proj-subtitle">Le Wagon Final Project · March 2026</div>
         <h3 class="proj-title">NoShowShield</h3>
-        <p class="proj-desc">End-to-end ML system predicting hotel booking cancellations on 119,390 real bookings. XGBoost classifier (AUC &ge; 0.86) feeds a Poisson-Binomial overbooking optimiser; SHAP for explainability. FastAPI + Streamlit, containerised on Google Cloud Run with sub-2s response.</p>
+        <p class="proj-desc">End-to-end ML system predicting hotel booking cancellations on 119,390 real bookings. XGBoost classifier (AUC &ge; 0.86) feeds a Poisson-Binomial overbooking optimiser; SHAP explainability surfaces per-booking risk drivers and global feature importance. FastAPI + Streamlit, containerised on Google Cloud Run with sub-2&thinsp;s response.</p>
         <div class="proj-tags">
           <span class="tag">XGBoost</span>
           <span class="tag">SHAP</span>
@@ -789,57 +792,248 @@ footer {
           <span class="tag">Docker</span>
           <span class="tag">GCP</span>
         </div>
-        <div class="proj-viz" id="viz-1"></div>
+        <div class="proj-viz">
+          <svg viewBox="0 0 600 56" preserveAspectRatio="none">
+            <text x="6" y="9" font-family="JetBrains Mono" font-size="7" fill="#938a7e" letter-spacing="1">P(CANCEL) DISTRIBUTION</text>
+            <text x="395" y="9" font-family="JetBrains Mono" font-size="7" fill="#181613" letter-spacing="1">THRESHOLD &rarr; OVERBOOKING</text>
+            <!-- baseline -->
+            <line x1="6" y1="48" x2="594" y2="48" stroke="#181613" stroke-width="0.4" opacity="0.25"/>
+            <!-- distribution curve (bimodal: many low-risk, smaller high-risk bump) -->
+            <path d="M 6 47 Q 50 20 100 22 Q 150 26 200 36 Q 260 46 340 44 Q 400 42 440 20 Q 480 14 520 26 Q 560 38 594 46 L 594 48 L 6 48 Z" fill="#C4513A" opacity="0.12"/>
+            <path d="M 6 47 Q 50 20 100 22 Q 150 26 200 36 Q 260 46 340 44 Q 400 42 440 20 Q 480 14 520 26 Q 560 38 594 46" fill="none" stroke="#C4513A" stroke-width="1.2"/>
+            <!-- threshold line -->
+            <line x1="390" y1="14" x2="390" y2="50" stroke="#181613" stroke-dasharray="2 2" stroke-width="0.6"/>
+            <!-- flagged bookings above threshold -->
+            <circle cx="405" cy="38" r="2" fill="#C4513A"/>
+            <circle cx="428" cy="32" r="2" fill="#C4513A"/>
+            <circle cx="445" cy="22" r="2" fill="#C4513A"/>
+            <circle cx="470" cy="18" r="2" fill="#C4513A"/>
+            <circle cx="498" cy="24" r="2" fill="#C4513A"/>
+            <circle cx="528" cy="30" r="2" fill="#C4513A"/>
+            <circle cx="556" cy="38" r="2" fill="#C4513A"/>
+            <!-- safe bookings -->
+            <circle cx="60" cy="36" r="1.6" fill="#1E3A3A" opacity="0.6"/>
+            <circle cx="110" cy="30" r="1.6" fill="#1E3A3A" opacity="0.6"/>
+            <circle cx="180" cy="38" r="1.6" fill="#1E3A3A" opacity="0.6"/>
+            <circle cx="250" cy="42" r="1.6" fill="#1E3A3A" opacity="0.6"/>
+            <circle cx="320" cy="44" r="1.6" fill="#1E3A3A" opacity="0.6"/>
+          </svg>
+        </div>
       </div>
       <div class="proj-arrow">&rarr;</div>
     </article>
 
-    <article class="project">
+    <article class="project" onclick="window.open('https://www.mpgmaster.nl/', '_blank')">
       <div class="proj-num">/ 02</div>
       <div class="proj-body">
         <div class="proj-subtitle">Packhunt · Product Owner · 2024&ndash;2025</div>
         <h3 class="proj-title">MPG Master</h3>
-        <p class="proj-desc">First free, publicly available tool for the Netherlands&rsquo; legally-mandated environmental performance calculation (MPG). Led a cross-functional team of eight from discovery to deployment on a six-figure budget. Integrated with the national NMD database &mdash; 4,700+ certified products, 30&ndash;50 reports/month in production.</p>
+        <p class="proj-desc">Owned the first free, publicly-available web tool for the Netherlands&rsquo; legally-required MPG (environmental performance) calculation &mdash; used nationwide to generate reports for building permits. Led a team of eight on a six-figure budget; integrated with the Dutch national NMD database (4,700+ certified products); negotiated scope with the CEO; turned a post-refactor production incident into a staged-deployment protocol adopted company-wide.</p>
         <div class="proj-tags">
           <span class="tag">Product Ownership</span>
           <span class="tag">Stakeholder mgmt</span>
           <span class="tag">UX research</span>
-          <span class="tag">Deployment protocol</span>
+          <span class="tag">Regulated product</span>
         </div>
-        <div class="proj-viz" id="viz-2"></div>
+        <div class="proj-viz">
+          <svg viewBox="0 0 600 56" preserveAspectRatio="none">
+            <text x="6" y="9" font-family="JetBrains Mono" font-size="7" fill="#938a7e" letter-spacing="1">BUILDING ELEMENTS</text>
+            <text x="460" y="9" font-family="JetBrains Mono" font-size="7" fill="#181613" letter-spacing="1">MPG SCORE</text>
+            <!-- stacked material impact bars representing elements from NMD -->
+            <g font-family="Geist" font-size="6.5" fill="#F2EDE4">
+              <rect x="6" y="14" width="410" height="7" fill="#C4513A"/>
+              <text x="12" y="20">FOUNDATION &middot; concrete</text>
+              <rect x="6" y="22" width="350" height="7" fill="#1E3A3A"/>
+              <text x="12" y="28">WALLS &middot; masonry &amp; insulation</text>
+              <rect x="6" y="30" width="280" height="7" fill="#D4A574" fill-opacity="0.95"/>
+              <text x="12" y="36" fill="#181613">ROOF &middot; timber &amp; cladding</text>
+              <rect x="6" y="38" width="220" height="7" fill="#9a3a27"/>
+              <text x="12" y="44">INSTALLATIONS &middot; MEP</text>
+              <rect x="6" y="46" width="160" height="5" fill="#938a7e"/>
+            </g>
+            <!-- summation arrow -->
+            <path d="M 420 30 L 446 30" stroke="#181613" stroke-width="0.7"/>
+            <polygon points="446,30 442,27 442,33" fill="#181613"/>
+            <text x="425" y="27" font-family="JetBrains Mono" font-size="7" fill="#181613">&Sigma;</text>
+            <!-- score card -->
+            <rect x="452" y="14" width="142" height="37" fill="#181613"/>
+            <text x="458" y="32" font-family="Fraunces" font-size="16" font-style="italic" fill="#D4A574" font-variation-settings="'SOFT' 60">0.62</text>
+            <text x="512" y="28" font-family="JetBrains Mono" font-size="5.5" fill="#d9d1c2" letter-spacing="0.5">kg CO&#8322;-eq</text>
+            <text x="512" y="35" font-family="JetBrains Mono" font-size="5.5" fill="#d9d1c2" letter-spacing="0.5">/m&sup2;/year</text>
+            <text x="458" y="46" font-family="JetBrains Mono" font-size="5.5" fill="#d9d1c2" letter-spacing="1">PASSES: &le; 0.80</text>
+          </svg>
+        </div>
       </div>
       <div class="proj-arrow">&rarr;</div>
     </article>
 
-    <article class="project">
+    <article class="project" onclick="window.open('https://www.walraven.com/int/walraven-channel-selector/', '_blank')">
       <div class="proj-num">/ 03</div>
       <div class="proj-body">
-        <div class="proj-subtitle">Packhunt · Computational Designer · 2021&ndash;2025</div>
-        <h3 class="proj-title">Walraven Configurator</h3>
-        <p class="proj-desc">Web configurator for a major Dutch rail-and-bracket manufacturer, deployed across Spain, France, and Poland. Cut project completion from 2&ndash;5 days to 1&ndash;2 hours. Automated structural validation and PDF reports. Used usage analytics to retire five underperforming templates and double down on the two driving real value.</p>
+        <div class="proj-subtitle">Packhunt · Product &amp; Engineering · 2021&ndash;2025</div>
+        <h3 class="proj-title">Walraven Channel Selector</h3>
+        <p class="proj-desc">B2B web product that runs live structural calculations for fixing-rail selection. Engineers input rail type, supports, and point / distributed loads; the tool returns maximum stress, deflection, and an auto-generated PDF report. Deployed across 20+ Walraven markets. Cut project completion from 2&ndash;5 days to 1&ndash;2 hours. Used usage analytics to retire five underperforming templates and concentrate effort on the two actually driving value.</p>
         <div class="proj-tags">
-          <span class="tag">Grasshopper</span>
+          <span class="tag">Web configurator</span>
+          <span class="tag">Structural engine</span>
           <span class="tag">AWS</span>
-          <span class="tag">Parametric</span>
           <span class="tag">PyTest</span>
+          <span class="tag">Data-to-decision</span>
         </div>
-        <div class="proj-viz" id="viz-3"></div>
+        <div class="proj-viz">
+          <svg viewBox="0 0 600 56" preserveAspectRatio="none">
+            <text x="6" y="9" font-family="JetBrains Mono" font-size="7" fill="#938a7e" letter-spacing="1">INPUT &middot; LOADS</text>
+            <text x="500" y="9" font-family="JetBrains Mono" font-size="7" fill="#181613" letter-spacing="1">OUTPUT &middot; &delta;, &sigma;</text>
+            <!-- Distributed load arrows -->
+            <g stroke="#C4513A" stroke-width="0.9" fill="none">
+              <line x1="80" y1="13" x2="80" y2="26"/><polyline points="76,22 80,26 84,22"/>
+              <line x1="110" y1="13" x2="110" y2="26"/><polyline points="106,22 110,26 114,22"/>
+              <line x1="140" y1="13" x2="140" y2="26"/><polyline points="136,22 140,26 144,22"/>
+              <line x1="170" y1="13" x2="170" y2="26"/><polyline points="166,22 170,26 174,22"/>
+              <line x1="200" y1="13" x2="200" y2="26"/><polyline points="196,22 200,26 204,22"/>
+              <line x1="230" y1="13" x2="230" y2="26"/><polyline points="226,22 230,26 234,22"/>
+            </g>
+            <line x1="75" y1="13" x2="235" y2="13" stroke="#C4513A" stroke-width="1.3"/>
+            <text x="136" y="10" font-family="JetBrains Mono" font-size="5.5" fill="#C4513A" letter-spacing="1">q</text>
+            <!-- Point load -->
+            <g stroke="#9a3a27" stroke-width="1.6" fill="none">
+              <line x1="360" y1="8" x2="360" y2="28"/><polyline points="355,22 360,28 365,22"/>
+            </g>
+            <text x="354" y="8" font-family="JetBrains Mono" font-size="6.5" fill="#9a3a27">P</text>
+            <!-- Undeformed reference beam -->
+            <line x1="60" y1="30" x2="540" y2="30" stroke="#938a7e" stroke-dasharray="2 2" stroke-width="0.4" opacity="0.6"/>
+            <!-- Deformed beam -->
+            <path d="M 60 30 Q 180 46 300 48 Q 420 46 540 30" fill="none" stroke="#181613" stroke-width="2"/>
+            <!-- Supports (triangles) -->
+            <polygon points="60,30 54,40 66,40" fill="#181613"/>
+            <polygon points="540,30 534,40 546,40" fill="#181613"/>
+            <!-- Ground hatching under supports -->
+            <g stroke="#181613" stroke-width="0.5">
+              <line x1="48" y1="42" x2="72" y2="42"/>
+              <line x1="50" y1="42" x2="46" y2="46"/><line x1="55" y1="42" x2="51" y2="46"/>
+              <line x1="60" y1="42" x2="56" y2="46"/><line x1="65" y1="42" x2="61" y2="46"/>
+              <line x1="70" y1="42" x2="66" y2="46"/>
+              <line x1="528" y1="42" x2="552" y2="42"/>
+              <line x1="530" y1="42" x2="526" y2="46"/><line x1="535" y1="42" x2="531" y2="46"/>
+              <line x1="540" y1="42" x2="536" y2="46"/><line x1="545" y1="42" x2="541" y2="46"/>
+              <line x1="550" y1="42" x2="546" y2="46"/>
+            </g>
+            <!-- Deflection indicator -->
+            <line x1="300" y1="30" x2="300" y2="48" stroke="#C4513A" stroke-width="0.5" stroke-dasharray="1 1"/>
+            <text x="305" y="49" font-family="JetBrains Mono" font-size="6" fill="#C4513A" font-style="italic">&delta;max</text>
+          </svg>
+        </div>
       </div>
       <div class="proj-arrow">&rarr;</div>
     </article>
 
-    <article class="project">
+    <article class="project" onclick="window.open('https://www.deaanbouwexpert.nl/offerte-aanvragen-prefab/', '_blank')">
       <div class="proj-num">/ 04</div>
       <div class="proj-body">
-        <div class="proj-subtitle">Packhunt · Computational Designer · 2022&ndash;2024</div>
-        <h3 class="proj-title">Systemflex 3D Designer</h3>
-        <p class="proj-desc">Public-facing 3D configurator on Systemflex&rsquo;s website letting clients design custom partition walls and auto-generate the full production package &mdash; bill of materials, pricing offer, and configuration summary. Eliminates manual quoting entirely.</p>
+        <div class="proj-subtitle">Packhunt · Product &amp; Engineering · 2023&ndash;2025</div>
+        <h3 class="proj-title">De Aanbouw Expert Configurators</h3>
+        <p class="proj-desc">Two customer-facing configurators &mdash; prefab home extensions and dormers &mdash; letting homeowners self-design, see instant pricing, and submit technically-validated quote requests without a sales rep. Tangible business impact: the client grew from 2 to 35 employees on the back of the platform, and their quote cycle compressed from one week to under one hour.</p>
         <div class="proj-tags">
-          <span class="tag">3D Configurator</span>
-          <span class="tag">BOM Automation</span>
+          <span class="tag">B2C configurator</span>
+          <span class="tag">CPQ</span>
+          <span class="tag">Instant pricing</span>
+          <span class="tag">Lead generation</span>
+        </div>
+        <div class="proj-viz">
+          <svg viewBox="0 0 600 56" preserveAspectRatio="none">
+            <text x="6" y="9" font-family="JetBrains Mono" font-size="7" fill="#938a7e" letter-spacing="1">HOUSE + PREFAB MODULE</text>
+            <text x="490" y="9" font-family="JetBrains Mono" font-size="7" fill="#181613" letter-spacing="1">INSTANT QUOTE</text>
+            <!-- Ground line -->
+            <line x1="6" y1="51" x2="440" y2="51" stroke="#181613" stroke-width="0.4" opacity="0.3"/>
+            <!-- Main house -->
+            <g>
+              <rect x="130" y="28" width="110" height="23" fill="#F2EDE4" stroke="#181613" stroke-width="1"/>
+              <polygon points="127,28 185,14 243,28" fill="#1E3A3A" stroke="#181613" stroke-width="0.8"/>
+              <rect x="180" y="38" width="14" height="13" fill="#181613"/>
+              <rect x="145" y="32" width="12" height="8" fill="none" stroke="#181613" stroke-width="0.5"/>
+              <rect x="210" y="32" width="12" height="8" fill="none" stroke="#181613" stroke-width="0.5"/>
+            </g>
+            <!-- Connection indicator (the "+") -->
+            <text x="253" y="44" font-family="Fraunces" font-size="14" font-style="italic" fill="#C4513A" font-variation-settings="'SOFT' 80">+</text>
+            <!-- Prefab extension module -->
+            <g>
+              <rect x="278" y="33" width="68" height="18" fill="#C4513A" stroke="#181613" stroke-width="1"/>
+              <rect x="290" y="38" width="9" height="7" fill="#F2EDE4"/>
+              <rect x="308" y="38" width="9" height="7" fill="#F2EDE4"/>
+              <rect x="326" y="38" width="9" height="7" fill="#F2EDE4"/>
+              <text x="283" y="30" font-family="JetBrains Mono" font-size="5.5" fill="#C4513A" letter-spacing="1">PREFAB 4m</text>
+            </g>
+            <!-- Arrow to quote -->
+            <path d="M 354 42 L 382 42" stroke="#181613" stroke-width="0.7"/>
+            <polygon points="382,42 378,39 378,45" fill="#181613"/>
+            <!-- Quote card -->
+            <g>
+              <rect x="392" y="22" width="202" height="28" fill="#181613"/>
+              <text x="400" y="33" font-family="JetBrains Mono" font-size="6" fill="#D4A574" letter-spacing="1">QUOTE</text>
+              <text x="437" y="33" font-family="JetBrains Mono" font-size="6" fill="#938a7e" letter-spacing="0.5">&middot; 1 week &rarr; 1 hour</text>
+              <text x="400" y="46" font-family="Fraunces" font-size="13" font-style="italic" fill="white" font-variation-settings="'SOFT' 40">&euro; 9.450</text>
+              <text x="460" y="46" font-family="JetBrains Mono" font-size="5.5" fill="#d9d1c2" letter-spacing="0.5">incl. BTW &middot; PDF ready</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="proj-arrow">&rarr;</div>
+    </article>
+
+    <article class="project" onclick="window.open('https://systemflex.nl/pages/configurator', '_blank')">
+      <div class="proj-num">/ 05</div>
+      <div class="proj-body">
+        <div class="proj-subtitle">Packhunt · Product &amp; Engineering · 2022&ndash;2024</div>
+        <h3 class="proj-title">Systemflex 3D Designer</h3>
+        <p class="proj-desc">Public-facing 3D design tool embedded on Systemflex&rsquo;s site &mdash; first of its kind in the Dutch systeemwand industry. Customers compose rooms from modular walls and doors in 3D, get instant per-product pricing, and order directly through the webshop. Pioneered self-serve design-to-order for a sector traditionally reliant on sales reps.</p>
+        <div class="proj-tags">
+          <span class="tag">3D configurator</span>
+          <span class="tag">B2C web product</span>
+          <span class="tag">BOM automation</span>
           <span class="tag">JSON low-code</span>
         </div>
-        <div class="proj-viz" id="viz-4"></div>
+        <div class="proj-viz">
+          <svg viewBox="0 0 600 56" preserveAspectRatio="none">
+            <text x="6" y="9" font-family="JetBrains Mono" font-size="7" fill="#938a7e" letter-spacing="1">MODULAR PARTITIONS</text>
+            <text x="480" y="9" font-family="JetBrains Mono" font-size="7" fill="#181613" letter-spacing="1">BOM + PRICE</text>
+            <!-- Floor plan container -->
+            <g transform="translate(6, 14)">
+              <rect x="0" y="0" width="400" height="38" fill="none" stroke="#181613" stroke-width="1"/>
+              <!-- solid wall -->
+              <line x1="90" y1="0" x2="90" y2="38" stroke="#1E3A3A" stroke-width="3.5"/>
+              <!-- glass panel (dashed = transparent) -->
+              <line x1="160" y1="0" x2="160" y2="38" stroke="#D4A574" stroke-width="2.5" stroke-dasharray="3 2"/>
+              <!-- wall with door gap + swing arc -->
+              <line x1="240" y1="0" x2="240" y2="14" stroke="#1E3A3A" stroke-width="3.5"/>
+              <line x1="240" y1="26" x2="240" y2="38" stroke="#1E3A3A" stroke-width="3.5"/>
+              <path d="M 240 14 A 12 12 0 0 1 252 26" fill="none" stroke="#938a7e" stroke-width="0.7"/>
+              <line x1="240" y1="14" x2="252" y2="14" stroke="#181613" stroke-width="0.8"/>
+              <!-- second glass panel -->
+              <line x1="320" y1="0" x2="320" y2="38" stroke="#D4A574" stroke-width="2.5" stroke-dasharray="3 2"/>
+              <!-- room labels -->
+              <g font-family="JetBrains Mono" font-size="5.5" fill="#938a7e" letter-spacing="0.5">
+                <text x="35" y="22">R1</text>
+                <text x="115" y="22">R2</text>
+                <text x="190" y="22">R3</text>
+                <text x="270" y="22">R4</text>
+                <text x="350" y="22">R5</text>
+              </g>
+            </g>
+            <!-- BOM summary -->
+            <g transform="translate(420, 14)">
+              <rect x="0" y="0" width="174" height="38" fill="#181613"/>
+              <text x="8" y="11" font-family="JetBrains Mono" font-size="5.5" fill="#D4A574" letter-spacing="1">BILL OF MATERIALS</text>
+              <g font-family="JetBrains Mono" font-size="5.5" fill="#d9d1c2">
+                <text x="8" y="22">2&times; solid wall panel</text><text x="160" y="22" text-anchor="end">&euro;840</text>
+                <text x="8" y="30">2&times; glass panel</text><text x="160" y="30" text-anchor="end">&euro;1,120</text>
+                <text x="8" y="38">1&times; door unit</text><text x="160" y="38" text-anchor="end">&euro;480</text>
+              </g>
+              <line x1="8" y1="40" x2="166" y2="40" stroke="#D4A574" stroke-width="0.3" opacity="0.5"/>
+              <text x="8" y="48" font-family="Fraunces" font-size="7" fill="white" font-style="italic">Total</text>
+              <text x="166" y="48" font-family="Fraunces" font-size="9" font-style="italic" fill="#D4A574" text-anchor="end" font-variation-settings="'SOFT' 60">&euro; 2,440</text>
+            </g>
+          </svg>
+        </div>
       </div>
       <div class="proj-arrow">&rarr;</div>
     </article>
@@ -850,7 +1044,7 @@ footer {
 <!-- ——— TRAJECTORY ——————————————————————————————— -->
 <section id="trajectory">
   <div class="sec-kicker">03 — Trajectory</div>
-  <h2 class="sec-title">Four continents.<br/><em>One through-line:</em> systems that serve people.</h2>
+  <h2 class="sec-title">Four continents.<br/><em>One through-line:</em> shipping tools people actually use.</h2>
 
   <div class="trajectory">
     <div class="map-wrap">
@@ -912,20 +1106,20 @@ footer {
         <div class="traj-year">2026</div>
         <div>
           <div class="traj-title">Data Science &amp; AI Bootcamp</div>
-          <div class="traj-place">Le Wagon · Amsterdam · 400 hrs</div>
+          <div class="traj-place">Le Wagon · Completed March 2026 · 400 hrs</div>
         </div>
       </li>
       <li class="traj-item">
         <div class="traj-year">2021&ndash;25</div>
         <div>
-          <div class="traj-title">Computational Designer &rarr; Product Owner</div>
-          <div class="traj-place">Packhunt (White Lioness Technologies) · NL</div>
+          <div class="traj-title">Product Owner &amp; Product Engineer</div>
+          <div class="traj-place">Packhunt (White Lioness Technologies) · Amsterdam</div>
         </div>
       </li>
       <li class="traj-item">
         <div class="traj-year">2019&ndash;21</div>
         <div>
-          <div class="traj-title">MSc Architecture · Building Tech</div>
+          <div class="traj-title">MSc Building Technology</div>
           <div class="traj-place">TU Delft · Sub-Saharan Excellence Scholarship</div>
         </div>
       </li>
@@ -939,14 +1133,14 @@ footer {
       <li class="traj-item">
         <div class="traj-year">2017&ndash;19</div>
         <div>
-          <div class="traj-title">Architectural Designer</div>
+          <div class="traj-title">Designer</div>
           <div class="traj-place">Extudio-35 · Addis Ababa, Ethiopia</div>
         </div>
       </li>
       <li class="traj-item">
         <div class="traj-year">2012&ndash;17</div>
         <div>
-          <div class="traj-title">BSc Architecture · 5-year programme</div>
+          <div class="traj-title">BSc · 5-year programme</div>
           <div class="traj-place">EIABC · Addis Ababa University</div>
         </div>
       </li>
@@ -993,13 +1187,13 @@ footer {
     </div>
 
     <div class="stack-group">
-      <h3>Computational Design</h3>
+      <h3>Modelling &amp; 3D</h3>
       <div class="stack-list">
         <span class="stack-item">Grasshopper</span>
         <span class="stack-item">Rhino</span>
         <span class="stack-item">Parametric modelling</span>
         <span class="stack-item">JSON low-code</span>
-        <span class="stack-item">IFC / BIM</span>
+        <span class="stack-item">SVG / Canvas</span>
         <span class="stack-item">3D Printing</span>
       </div>
     </div>
@@ -1026,7 +1220,7 @@ footer {
   <h2 class="sec-title">I&rsquo;m looking for a role where<br/>I can apply data science to build tools<br/>that create <em>measurable impact at scale.</em></h2>
 
   <div class="contact-links">
-    <a href="mailto:hello@example.com">email</a>
+    <a href="mailto:bezawitzerayacob@gmail.com">email</a>
     <a href="https://linkedin.com" target="_blank" rel="noopener">linkedin</a>
     <a href="https://github.com/bezawitzyb" target="_blank" rel="noopener">github</a>
     <a href="https://noshowshield.streamlit.app/" target="_blank" rel="noopener">live demo</a>
@@ -1034,7 +1228,7 @@ footer {
 </section>
 
 <footer>
-  <div>Bezawit &mdash; Amsterdam, NL</div>
+  <div>Bezawit Zerayacob Bekele &mdash; Amsterdam, NL</div>
   <div>Designed &amp; built · 2026</div>
 </footer>
 
@@ -1058,13 +1252,13 @@ const morphWord = document.getElementById('morphWord');
 const configStatus = document.getElementById('configStatus');
 
 const words = {
-  design:  'shapes',
+  design:  'interfaces',
   product: 'products',
   data:    'models',
-  balanced:'systems'
+  balanced:'software'
 };
 const statuses = {
-  design:  'Design-led',
+  design:  'Interface-led',
   product: 'Product-led',
   data:    'Data-led',
   balanced:'Balanced'
@@ -1200,25 +1394,6 @@ const revealObs = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-/* ——— PROJECT VIZ: LITTLE GENERATIVE BARS ————————— */
-function fillViz(id, seed, color) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  const bars = 60;
-  let rng = seed;
-  function rand() { rng = (rng * 9301 + 49297) % 233280; return rng / 233280; }
-  let html = '';
-  for (let i = 0; i < bars; i++) {
-    const h = 20 + rand() * 80;
-    html += `<div style="flex:1; background:${color}; height:${h}%; opacity:${0.3 + rand()*0.7};"></div>`;
-  }
-  el.innerHTML = html;
-}
-fillViz('viz-1', 42,  '#C4513A');
-fillViz('viz-2', 137, '#1E3A3A');
-fillViz('viz-3', 221, '#D4A574');
-fillViz('viz-4', 89,  '#9a3a27');
 </script>
 
 </body>
